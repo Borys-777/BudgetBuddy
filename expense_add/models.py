@@ -25,30 +25,32 @@ class Expense (models.Model):
         decimal_places=2
         )
 
-class Month (models.Model): 
+# class Month (models.Model): 
 
-    """
-    Model showing the month of the expenses were made
-    """
-    month_select [
-        ("January", "January"),
-        ("February", "February"),
-        ("March", "March"),
-        ("April", "April"), 
-        ("May", "May"), 
-        ("June", "June"), 
-        ("July", "July"), 
-        ("August", "August"),
-        ("September", "September"),
-        ("October", "OCtober"), 
-        ("November", "November"),
-        ("December", "December"),
-    ]
+#     """
+#     Model showing the month of the expenses were made
+#     """
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    month_name = models.CharField(
-        max_length=12,
-        choices=month_select,
-    )
+#     month_name = models.CharField(
+#         max_length=12,
+#         select=month_select,
+    # )
+    
+    # month_select = [
+    #     ("January", "January"),
+    #     ("February", "February"),
+    #     ("March", "March"),
+    #     ("April", "April"), 
+    #     ("May", "May"), 
+    #     ("June", "June"), 
+    #     ("July", "July"), 
+    #     ("August", "August"),
+    #     ("September", "September"),
+    #     ("October", "OCtober"), 
+    #     ("November", "November"),
+    #     ("December", "December"),
+    # ]
 
     year = models.CharField(blank=False, default = "2024")
 
