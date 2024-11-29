@@ -8,7 +8,7 @@ class Expense (models.Model):
     Model showing the expenses
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    expense_type = models.CharField(max_length=100, unique=True, blank=False, default='Type your expenses here') 
+    # expense_type = models.ManyToManyField/Charfield(max_length=100, unique=True, blank=False, default='Type your expenses here') 
     currency_select = [
         ('USD', 'USD'),
         ('GBP', 'GBP'),
