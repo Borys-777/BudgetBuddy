@@ -25,6 +25,11 @@ class Expense(models.Model):
         decimal_places=2
     )
 
+    # created_at = models.DateTimeField(auto_now_add=True) - not sure if this field is required. Will check later
+
+    class Meta:
+        ordering = ["-cost"]
+
 class Month(models.Model):
     """
     Model showing the month of the expenses were made
