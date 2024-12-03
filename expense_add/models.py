@@ -52,6 +52,7 @@ class Month(models.Model):
     month_name = models.CharField(
         max_length=12,
         choices=month_select,  # Used 'choices' instead of 'select'
+        # default="January"
     )
     
     year = models.PositiveIntegerField(blank=False, default=2024)  # Changed to PositiveIntegerField
