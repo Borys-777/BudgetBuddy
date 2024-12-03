@@ -11,4 +11,4 @@ class HomePage(TemplateView):
 
 # Create your views here.
 # def home(request):
-#     return HttpResponse("Hello, world!")
+#     return render(request, 'templates_name = index.html')
