@@ -1,0 +1,36 @@
+{% extends 'expense_add/base.html' %}
+
+{% block content %}
+
+<body>
+
+    <div class="container bg-light p-3">
+
+        <h3> Create your account</h3>
+
+        <hr>
+        <br>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <br>
+
+            <button type="submit" class="btn-btn-primary w-50 btn-block p-1"> Create account</button>
+
+        </form>
+
+        <br>
+
+        <div class="text-center">
+            <p>Already have your account?</p> <a href="{% url '' %}"> Login </a>
+        </div>
+
+    </div>
+
+</body>
+
+{% endblock %}
