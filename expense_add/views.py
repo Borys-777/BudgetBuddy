@@ -6,6 +6,8 @@ from .forms import CreateUserForm, LoginForm
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 
+from django.contrib.auth.decorators import login_required
+
 # from django.http import HttpResponse
  
 class HomePage(TemplateView):
@@ -60,8 +62,27 @@ def my_login(request):
 
                 auth.login(request, user)
 
-                # return redirect("dashboard")
+                return redirect("dashboard")
 
     context = {'form':form}
 
     return render(request, 'expense_add/my-login.html', context=context)
+
+
+
+# Dashboard for registered users
+
+@login_required(login_url='my-login')
+def dashboard(request):
+    return render(request, 'expense_add/dashboard.html')
+
+
+
+
+# User logout 
+
+def user_logout(request):
+
+    auth.logout(request)
+
+    return redirect('my-login')
