@@ -3,6 +3,9 @@ from django.views.generic import TemplateView
 
 from .forms import CreateUserForm, LoginForm
 
+from django.contrib.auth.models import auth
+from django.contrib.auth import authenticate
+
 # from django.http import HttpResponse
  
 class HomePage(TemplateView):
@@ -30,8 +33,35 @@ def register(request):
 
             form.save()
 
-            # return redirect('')
+            return redirect('my-login')
 
     context = {'form':form}
 
     return render(request, 'expense_add/register.html', context=context)
+
+    # User login 
+
+def my_login(request):
+        
+    form = LoginForm()
+
+    if request.method == "POST":
+
+        form = LoginForm(request, data=request.POST)
+
+        if form.is_valid():
+
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+
+                auth.login(request, user)
+
+                # return redirect("dashboard")
+
+    context = {'form':form}
+
+    return render(request, 'expense_add/my-login.html', context=context)

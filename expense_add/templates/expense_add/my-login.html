@@ -1,0 +1,39 @@
+{% extends 'expense_add/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body>
+
+    <div class="container bg-light p-3 form-layout">
+
+        <h3> Login to your account</h3>
+
+        <hr>
+        <br>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{form|crispy}}
+
+            <br>
+
+            <button type="submit" class="btn-btn-primary w-50 btn-block p-1"> Login</button>
+
+        </form>
+
+        <br>
+
+        <div class="text-center">
+            <p>Don't have an account yet?</p> <a href="{% url 'register' %}"> Register </a>
+        </div>
+
+    </div>
+
+</body>
+
+
+{% endblock %}
