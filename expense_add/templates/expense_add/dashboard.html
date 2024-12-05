@@ -2,9 +2,56 @@
 
 {% block content %}
 
-    <h1> This is your dashboard, {{user}}! </h1>
+<body>
 
+    <h3> This is your dashboard, {{user}}! </h3>
 
-    
+    <hr>
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard' %}"> 
+        Add new expense 
+    </a>
+
+    <hr>
+
+    <table class="table table-hover">
+
+        <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Type</th>
+              <th scope="col">Currency</th>
+              <th scope="col">Cost</th>
+            </tr>
+          </thead>
+          
+
+          <tbody>
+
+           <tr>
+            
+               <td>
+
+               </td>
+
+           </tr>
+
+          </tbody>
+
+    </table>
+
+    {% for expense in expenses %}
+
+    {{expense.id}}
+
+    {{expense.expense_type}}
+
+    {{expense.currency}}
+
+    {{expense.cost}}
+
+    {% endfor %}
+
+</body>
 
 {% endblock %}

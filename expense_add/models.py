@@ -7,7 +7,9 @@ class Expense(models.Model):
     """ 
     Model showing the expenses
     """
+    # creation_date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # name = models.CharField(max_length=100, unique=True, blank=False, default='Indicate your name here')
     expense_type = models.CharField(max_length=100, unique=True, blank=False, default='Type your expenses here') 
     currency_select = [
         ('USD', 'USD'),
@@ -58,4 +60,4 @@ class Month(models.Model):
     year = models.PositiveIntegerField(blank=False, default=2024)  # Changed to PositiveIntegerField
 
     def __str__(self):
-        return f"{self.month_name} {self.year}"
+        return f"{self.name} {self.month_name} {self.year}"

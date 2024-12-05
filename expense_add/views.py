@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate
 
 from django.contrib.auth.decorators import login_required
 
+from .models import Expense
+
 # from django.http import HttpResponse
  
 class HomePage(TemplateView):
@@ -74,7 +76,12 @@ def my_login(request):
 
 @login_required(login_url='my-login')
 def dashboard(request):
-    return render(request, 'expense_add/dashboard.html')
+
+    my_expenses = Expense.objects.all()
+
+    context = {'expenses': my_expenses }
+
+    return render(request, 'expense_add/dashboard.html', context=context)
 
 
 
