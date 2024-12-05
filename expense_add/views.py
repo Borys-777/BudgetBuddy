@@ -14,7 +14,7 @@ class HomePage(TemplateView):
     """
     Displayshomepage"
     """
-    template_name = 'index.html'
+    template_name = 'expense_add/index.html'
 
 # Create your views here.
 # def home(request):
