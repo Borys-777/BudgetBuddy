@@ -14,33 +14,42 @@
 
     <hr>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
 
-        <thead>
+        <thead class="table-light">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Type</th>
               <th scope="col">Currency</th>
               <th scope="col">Cost</th>
             </tr>
-          </thead>
+        </thead>
           
 
           <tbody>
 
+            {% if expenses %}
+
+                {% for expense in expenses %}
+
            <tr>
             
-               <td>
-
-               </td>
+               <td> {{expense.id}} </td>
+               <td> {{expense.expense_type}} </td>
+               <td> {{expense.currency}} </td>
+               <td> {{expense.cost}} </td>
 
            </tr>
+
+               {% endfor %}
+
+           {% endif %}
 
           </tbody>
 
     </table>
 
-    {% for expense in expenses %}
+    <!-- {% for expense in expenses %}
 
     {{expense.id}}
 
@@ -50,7 +59,7 @@
 
     {{expense.cost}}
 
-    {% endfor %}
+    {% endfor %} -->
 
 </body>
 
