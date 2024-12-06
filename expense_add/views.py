@@ -39,9 +39,12 @@ def register(request):
 
             return redirect('my-login')
 
-    context = {'form':form}
+    else:
+        form = CreateUserForm()  # Initialize the form for GET request
 
-    return render(request, 'expense_add/register.html', context=context)
+        context = {'form':form}
+
+        return render(request, 'expense_add/register.html', context=context)
 
     # User login 
 
