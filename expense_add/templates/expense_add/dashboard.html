@@ -18,10 +18,12 @@
 
         <thead class="table-light">
             <tr>
-              <th scope="col">ID</th>
+              <th scope="col">ID </th>
               <th scope="col">Type</th>
               <th scope="col">Currency</th>
               <th scope="col">Cost</th>
+
+              <th scope="col">View</th>
             </tr>
         </thead>
           
@@ -38,6 +40,8 @@
                <td> {{expense.expense_type}} </td>
                <td> {{expense.currency}} </td>
                <td> {{expense.cost}} </td>
+
+               <td> <a href="{%url 'record' expense.id  %}"> Click here </a>  </td>
 
            </tr>
 

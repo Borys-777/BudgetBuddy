@@ -1,0 +1,36 @@
+{% extends 'expense_add/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container bg-light p-3 form-layout">
+
+        <h3> Update record </h3>
+
+        <hr>
+        <br>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{form|crispy}}
+
+            <br>
+
+            <button type="submit" class="btn-btn-primary w-50 btn-block p-1"> Update record </button>
+
+        </form>
+
+    </div>
+
+
+</body>
+
+
+
+{% endblock %}

@@ -1,2 +1,23 @@
 <!-- read record = view record -->
 
+{% extends 'expense_add/base.html' %}
+
+{% block content %}
+
+<div class="card">
+
+    <div class="card-body">
+        <p>  <strong> ID: </strong> {{record.id}} </p>  
+        <p>  <strong> Type: </strong> {{record.expense_type}} </p>  
+        <p>  <strong> Currency:  </strong> {{record.currency}} </p> 
+        <p>  <strong> Cost:  </strong> {{record.cost}} </p> 
+
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock %}

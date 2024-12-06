@@ -99,6 +99,40 @@ def create_record(request):
     return render(request, 'expense_add/create-record.html', context=context)
 
 
+# Update a record 
+
+@login_required(login_url='my-login')
+def update_record(request, pk):
+
+    record = Record.objects.get(id=pk)
+
+    form = UpdateRecordForm(instance=record)
+
+    if request.method == 'POST':
+
+        form = UpdateRecordForm(request.POST, instance=record)
+
+        if form.is_valid():
+
+            form.save()
+
+            return redirect('dashboard')
+
+    context = {'form': form}
+
+    return render(request, 'expense_add/update-record.html', context=context)
+
+
+# View a singular comment 
+
+@login_required(login_url='my-login')
+def singular_record(request, pk):
+
+    all_records = Expense.objects.get(id=pk)
+
+    context= {'record': all_records}
+
+    return render(request, 'expense_add/read-record.html', context=context)
 
 
 # User logout 
