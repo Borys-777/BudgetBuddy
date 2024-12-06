@@ -135,6 +135,22 @@ def singular_record(request, pk):
     return render(request, 'expense_add/read-record.html', context=context)
 
 
+
+    # Delete record 
+
+@login_required(login_url='my-login')
+def delete_record(request, pk):
+
+    record = Expense.objects.get(id=pk)
+
+    record.delete()
+
+    return redirect('dashboard')
+
+
+
+
+
 # User logout 
 
 def user_logout(request):

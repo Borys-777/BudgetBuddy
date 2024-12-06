@@ -30,7 +30,7 @@ class Expense(models.Model):
     # created_at = models.DateTimeField(auto_now_add=True) - not sure if this field is required. Will check later
 
     class Meta:
-        ordering = ["-cost"]
+        ordering = ["id"]
 
 class Month(models.Model):
     """
