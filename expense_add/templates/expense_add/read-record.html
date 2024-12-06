@@ -6,6 +6,8 @@
 
 <div class="card">
 
+    
+
     <div class="card-body">
         <p>  <strong> ID: </strong> {{record.id}} </p>  
         <p>  <strong> Type: </strong> {{record.expense_type}} </p>  
@@ -14,9 +16,21 @@
 
     </div>
 
-
 </div>
 
+<br>
+
+<a href="{% url 'dashboard' %}" class="btn btn-success"> Back </a>
+
+&nbsp;
+
+<a href="{% url 'update-record' record.id %}" class="btn btn-info"> Update record </a>
+
+&nbsp;
+
+<a href="{% url '' %}" class="btn btn-danger"> Delete record </a>
+
+&nbsp;
 
 
 

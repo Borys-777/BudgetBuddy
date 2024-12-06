@@ -104,7 +104,7 @@ def create_record(request):
 @login_required(login_url='my-login')
 def update_record(request, pk):
 
-    record = Record.objects.get(id=pk)
+    record = Expense.objects.get(id=pk)
 
     form = UpdateRecordForm(instance=record)
 
