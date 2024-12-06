@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 
-from .forms import CreateUserForm, LoginForm
+from .forms import CreateUserForm, LoginForm, CreateRecordForm, UpdateRecordForm
 
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
@@ -14,7 +14,7 @@ from .models import Expense
  
 class HomePage(TemplateView):
     """
-    Displayshomepage"
+    Displays homepage"
     """
     template_name = 'expense_add/index.html'
 
@@ -27,7 +27,7 @@ class HomePage(TemplateView):
 
 def register(request):
 
-    form = CreateUserForm()
+    # form = CreateUserForm()
 
     if request.method == "POST":
 
@@ -82,6 +82,21 @@ def dashboard(request):
     context = {'expenses': my_expenses }
 
     return render(request, 'expense_add/dashboard.html', context=context)
+
+
+# Create a record 
+
+@login_required(login_url='my-login')
+def create_record(request):
+    form = CreateRecordForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            expense = form.save(commit=False)  # Don't save immediately
+            expense.user = request.user  # Assign the logged-in user
+            expense.save()  # Now save the record with the user
+            return redirect("dashboard")
+    context = {'form': form}
+    return render(request, 'expense_add/create-record.html', context=context)
 
 
 

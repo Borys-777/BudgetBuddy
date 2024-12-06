@@ -1,6 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+from .models import Expense
+
 from django import forms
 
 from django.contrib.auth.forms import AuthenticationForm
@@ -22,3 +24,23 @@ class LoginForm(AuthenticationForm):
 
     username = forms.CharField(widget=TextInput())
     password = forms.CharField(widget=PasswordInput())
+
+
+# Creating a record
+
+class CreateRecordForm(forms.ModelForm):
+       
+       class Meta:
+
+        model = Expense
+        fields = ['expense_type', 'currency', 'cost']
+
+
+# Updating a record
+
+class UpdateRecordForm(forms.ModelForm):
+       
+       class Meta:
+
+        model = Expense
+        fields = ['expense_type', 'currency', 'cost']
