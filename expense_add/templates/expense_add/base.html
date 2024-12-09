@@ -35,17 +35,20 @@
 
         {% for message in messages %}
 
-        {% endfor %}
 
         {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
 
-        <p class="alert alert-success float-center text-center"> 
+        <p class="alert alert-success float-center text-center message-text"> 
+
+            {{message}}
 
         </p>         
 
 
 
         {% endif %}
+
+        {% endfor %}
 
         {% block content %}
 
