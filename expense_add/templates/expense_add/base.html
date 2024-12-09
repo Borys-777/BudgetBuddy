@@ -16,6 +16,10 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
 </head>
 
 <body>
@@ -28,6 +32,20 @@
         <br>
 
         <!-- add notification messages here -->
+
+        {% for message in messages %}
+
+        {% endfor %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+        <p class="alert alert-success float-center text-center"> 
+
+        </p>         
+
+
+
+        {% endif %}
 
         {% block content %}
 

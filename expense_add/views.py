@@ -10,6 +10,8 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Expense
 
+from django.contrib import messages
+
 # from django.http import HttpResponse
  
 class HomePage(TemplateView):
@@ -36,6 +38,8 @@ def register(request):
         if form.is_valid():
 
             form.save()
+
+            messages.success(request, "Your account was created successfully")
 
             return redirect('my-login')
 
@@ -67,6 +71,8 @@ def my_login(request):
 
                 auth.login(request, user)
 
+                messages.success(request, "Your have logged in")
+
                 return redirect("dashboard")
 
     context = {'form':form}
@@ -83,6 +89,8 @@ def dashboard(request):
     my_expenses = Expense.objects.all()
 
     context = {'expenses': my_expenses }
+
+    messages.success(request, "Your record was created")
 
     return render(request, 'expense_add/dashboard.html', context=context)
 
@@ -119,6 +127,8 @@ def update_record(request, pk):
 
             form.save()
 
+            messages.success(request, "Your record was updated")
+
             return redirect('dashboard')
 
     context = {'form': form}
@@ -148,9 +158,9 @@ def delete_record(request, pk):
 
     record.delete()
 
+    messages.success(request, "Your record was deleted")
+
     return redirect('dashboard')
-
-
 
 
 
@@ -159,5 +169,7 @@ def delete_record(request, pk):
 def user_logout(request):
 
     auth.logout(request)
+
+    messages.success(request, "You are logged out")
 
     return redirect('my-login')
