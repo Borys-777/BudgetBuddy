@@ -11,15 +11,17 @@ class Expense(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     # name = models.CharField(max_length=100, unique=True, blank=False, default='Indicate your name here')
     expense_type = models.CharField(max_length=100, unique=True, blank=False, default='Type your expenses here') 
-    currency_select = [
-        # ('USD', 'USD'),
-        # ('GBP', 'GBP'),
-        ('EUR', 'EUR'),
-    ]
+    # currency_select = [
+    #     # ('USD', 'USD'),
+    #     # ('GBP', 'GBP'),
+    #     ('EUR', 'EUR'),
+    # ]
     currency = models.CharField(
         max_length=3,
-        choices=currency_select,
-        default='EUR'
+        # choices=currency_select,
+        default='EUR',
+        # editable=False
+    
     )
 
     cost = models.DecimalField(

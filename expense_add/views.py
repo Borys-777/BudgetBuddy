@@ -109,6 +109,7 @@ def create_record(request):
         if form.is_valid():
             expense = form.save(commit=False)  # Don't save immediately
             expense.user = request.user  # Assign the logged-in user
+            expense.currency = 'EUR'  # Ensure the currency is always 'EUR'
             expense.save()  # Now save the record with the user
 
             messages.success(request, "Your record was created")
@@ -133,6 +134,7 @@ def update_record(request, pk):
     if request.method == 'POST':
         form = UpdateRecordForm(request.POST, instance=record)
         if form.is_valid():
+            record.currency = 'EUR'  # Ensure the currency is always 'EUR'
             form.save()
             messages.success(request, "Your record was updated")
             return redirect('dashboard')

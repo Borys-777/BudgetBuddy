@@ -40,6 +40,8 @@
                         <td class="cost">{{ expense.cost }}</td>
                         <td> <a href="{% url 'record' expense.id %}">Click here</a> </td>
                     </tr>
+                    <!-- <p><strong>Currency: </strong> EUR</p> -->
+
                 {% endfor %}
             {% endif %}
         </tbody>
