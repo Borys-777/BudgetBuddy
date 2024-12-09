@@ -90,8 +90,6 @@ def dashboard(request):
 
     context = {'expenses': my_expenses }
 
-    messages.success(request, "Your record was created")
-
     return render(request, 'expense_add/dashboard.html', context=context)
 
 
@@ -105,6 +103,8 @@ def create_record(request):
             expense = form.save(commit=False)  # Don't save immediately
             expense.user = request.user  # Assign the logged-in user
             expense.save()  # Now save the record with the user
+
+            messages.success(request, "Your record was created")
             return redirect("dashboard")
     context = {'form': form}
     return render(request, 'expense_add/create-record.html', context=context)
