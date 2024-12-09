@@ -13,9 +13,8 @@ setTimeout(function()
 }, 2500);
 
 
-// Function for adding numbers 
+// Function for adding numbers (total cost)
 
-// static/js/app.js
 function calculateTotal() {
     // Get all the rows in the table body
     const rows = document.querySelectorAll("#expenseTable tbody tr");

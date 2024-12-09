@@ -71,7 +71,7 @@ def my_login(request):
 
                 auth.login(request, user)
 
-                messages.success(request, "Your have logged in")
+                messages.success(request, "You have logged in")
 
                 return redirect("dashboard")
 
@@ -81,15 +81,22 @@ def my_login(request):
 
 
 
-# Dashboard for registered users
-
 @login_required(login_url='my-login')
 def dashboard(request):
+    # Get all expenses for the logged-in user
+    my_expenses = Expense.objects.filter(user=request.user)
 
-    my_expenses = Expense.objects.all()
+    # Assuming all expenses have the same currency (for simplicity)
+    if my_expenses.exists():
+        currency = my_expenses[0].currency  # Get the currency from the first expense
+    else:
+        currency = 'EUR'  # Default to EUR if no expenses
 
-    context = {'expenses': my_expenses }
-
+    context = {
+        'expenses': my_expenses,
+        'currency': currency,  # Pass the currency to the template
+    }
+    
     return render(request, 'expense_add/dashboard.html', context=context)
 
 
@@ -110,29 +117,27 @@ def create_record(request):
     return render(request, 'expense_add/create-record.html', context=context)
 
 
-# Update a record 
 
+# Update record
 @login_required(login_url='my-login')
 def update_record(request, pk):
-
     record = Expense.objects.get(id=pk)
+
+    # Ensure that the logged-in user is the owner of the record
+    if record.user != request.user:
+        messages.error(request, "You are not authorized to edit this record.")
+        return redirect('dashboard')
 
     form = UpdateRecordForm(instance=record)
 
     if request.method == 'POST':
-
         form = UpdateRecordForm(request.POST, instance=record)
-
         if form.is_valid():
-
             form.save()
-
             messages.success(request, "Your record was updated")
-
             return redirect('dashboard')
 
     context = {'form': form}
-
     return render(request, 'expense_add/update-record.html', context=context)
 
 
@@ -140,11 +145,14 @@ def update_record(request, pk):
 
 @login_required(login_url='my-login')
 def singular_record(request, pk):
+    record = Expense.objects.get(id=pk)
 
-    all_records = Expense.objects.get(id=pk)
+    # Ensure that the logged-in user is the owner of the record
+    if record.user != request.user:
+        messages.error(request, "You are not authorized to view this record.")
+        return redirect('dashboard')
 
-    context= {'record': all_records}
-
+    context = {'record': record}
     return render(request, 'expense_add/read-record.html', context=context)
 
 
@@ -153,13 +161,15 @@ def singular_record(request, pk):
 
 @login_required(login_url='my-login')
 def delete_record(request, pk):
-
     record = Expense.objects.get(id=pk)
 
+    # Ensure that the logged-in user is the owner of the record
+    if record.user != request.user:
+        messages.error(request, "You are not authorized to delete this record.")
+        return redirect('dashboard')
+
     record.delete()
-
     messages.success(request, "Your record was deleted")
-
     return redirect('dashboard')
 
 
@@ -176,4 +186,3 @@ def user_logout(request):
 
 
 
-    

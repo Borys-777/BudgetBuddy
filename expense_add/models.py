@@ -12,8 +12,8 @@ class Expense(models.Model):
     # name = models.CharField(max_length=100, unique=True, blank=False, default='Indicate your name here')
     expense_type = models.CharField(max_length=100, unique=True, blank=False, default='Type your expenses here') 
     currency_select = [
-        ('USD', 'USD'),
-        ('GBP', 'GBP'),
+        # ('USD', 'USD'),
+        # ('GBP', 'GBP'),
         ('EUR', 'EUR'),
     ]
     currency = models.CharField(
@@ -53,11 +53,11 @@ class Month(models.Model):
     
     month_name = models.CharField(
         max_length=12,
-        choices=month_select,  # Used 'choices' instead of 'select'
-        # default="January"
+        choices=month_select,  
+        
     )
     
-    year = models.PositiveIntegerField(blank=False, default=2024)  # Changed to PositiveIntegerField
+    year = models.PositiveIntegerField(blank=False, default=2024)  
 
     def __str__(self):
         return f"{self.name} {self.month_name} {self.year}"
