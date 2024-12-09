@@ -173,3 +173,7 @@ def user_logout(request):
     messages.success(request, "You are logged out")
 
     return redirect('my-login')
+
+
+
+    

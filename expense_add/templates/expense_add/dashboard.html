@@ -1,5 +1,7 @@
 {% extends 'expense_add/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
 <body>
@@ -14,57 +16,43 @@
 
     <hr>
 
-    <table class="table table-hover table-bordered">
-
+    <table class="table table-hover table-bordered" id="expenseTable">
         <thead class="table-light">
             <tr>
-              <th scope="col">ID </th>
-              <th scope="col">Type</th>
-              <th scope="col">Currency</th>
-              <th scope="col">Cost</th>
-
-              <th scope="col">View</th>
+                <th scope="col">ID</th>
+                <th scope="col">Type</th>
+                <th scope="col">Currency</th>
+                <th scope="col">Cost</th>
+                <th scope="col">View</th>
             </tr>
         </thead>
-          
 
-          <tbody>
-
+        <tbody>
             {% if expenses %}
-
                 {% for expense in expenses %}
+                    <tr>
+                        <td>{{ expense.id }}</td>
+                        <td>{{ expense.expense_type }}</td>
+                        <td>{{ expense.currency }}</td>
+                        <td class="cost">{{ expense.cost }}</td>
+                        <td> <a href="{% url 'record' expense.id %}">Click here</a> </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
 
-           <tr>
-            
-               <td> {{expense.id}} </td>
-               <td> {{expense.expense_type}} </td>
-               <td> {{expense.currency}} </td>
-               <td> {{expense.cost}} </td>
-
-               <td> <a href="{%url 'record' expense.id  %}"> Click here </a>  </td>
-
-           </tr>
-
-               {% endfor %}
-
-           {% endif %}
-
-          </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><strong>  THE TOTAL COST: </strong></td>
+                <td><span id="totalCost">0.00</span></td>
+                <td></td>
+            </tr>
+        </tfoot>
 
     </table>
 
-    <!-- {% for expense in expenses %}
-
-    {{expense.id}}
-
-    {{expense.expense_type}}
-
-    {{expense.currency}}
-
-    {{expense.cost}}
-
-    {% endfor %} -->
-
 </body>
+
+<script src="{% static 'js/app.js' %}"></script>
 
 {% endblock %}
