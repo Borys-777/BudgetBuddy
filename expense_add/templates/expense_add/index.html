@@ -10,13 +10,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Django-Setup</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        
+
+        <style>
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Main content should fill available space */
+            .content {
+                flex-grow: 1;
+                /* This ensures content takes up space and pushes the footer down */
+            }
+
+            .footer {
+                margin-top: auto;
+            }
+        </style>
+
     </head>
 
     <body>
         <br>
         <br>
 
+        <div class="content">
         <div class="text-center">
 
             <h3> BudgetBuddy... Your financial assistant </h3>
@@ -30,8 +51,46 @@
 
             <a class="btn btn-primary" type="button" href="{% url 'register' %}"> Create your account </a>
 
+            <div>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, neque repellat non odit autem
+                    debitis
+                    suscipit sint natus officia sapiente excepturi? Recusandae a, maiores officiis dolorum itaque optio
+                    perspiciatis sit!
+                </p>
+
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore incidunt quisquam labore nostrum, ut
+                    veniam mollitia nulla neque ipsum rem, excepturi soluta harum reprehenderit suscipit est
+                    consequatur!
+                    Illo, unde amet?
+                </p> -->
+
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore incidunt quisquam labore nostrum, ut
+                    veniam mollitia nulla neque ipsum rem, excepturi soluta harum reprehenderit suscipit est
+                    consequatur!
+                    Illo, unde amet?
+                </p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore incidunt quisquam labore nostrum, ut
+                    veniam mollitia nulla neque ipsum rem, excepturi soluta harum reprehenderit suscipit est
+                    consequatur!
+                    Illo, unde amet?
+                </p> -->
+
+            </div>
+            </div>
+
         </div>
+
+        <footer class="footer bg-primary text-white py-3 mt-4 text-center">
+
+            Made by: Borys Shesterniak, 2024
+            <p><a href="https://github.com/Borys-777/BudgetBuddy" target="_blank"
+                    class="text-white text-center">GitHub</a> </p>
+
+        </footer>
     </body>
+
+
 
     </html>
 
