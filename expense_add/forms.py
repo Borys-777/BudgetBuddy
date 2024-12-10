@@ -33,7 +33,8 @@ class CreateRecordForm(forms.ModelForm):
        class Meta:
 
         model = Expense
-        fields = ['expense_type', 'currency', 'cost']
+        # fields = ['expense_type', 'currency', 'cost'] # this shows the currency input in the form
+        fields = ['expense_type', 'cost']
         # exclude = ['currency']
 
 
@@ -51,4 +52,5 @@ class UpdateRecordForm(forms.ModelForm):
        class Meta:
 
         model = Expense
-        fields = ['expense_type', 'currency', 'cost']
+        # fields = ['expense_type', 'currency', 'cost'] # this shows the currency input in the form
+        fields = ['expense_type', 'cost']

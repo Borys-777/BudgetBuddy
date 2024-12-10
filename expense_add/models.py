@@ -18,10 +18,9 @@ class Expense(models.Model):
     # ]
     currency = models.CharField(
         max_length=3,
+        default='EUR'
         # choices=currency_select,
-        default='EUR',
         # editable=False
-    
     )
 
     cost = models.DecimalField(
