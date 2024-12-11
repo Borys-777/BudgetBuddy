@@ -27,8 +27,6 @@
 
     {% include 'expense_add/navbar.html' %}
 
-    <div class="">
-
         <br>
 
         <!-- add notification messages here -->
@@ -50,14 +48,14 @@
 
         {% endfor %}
 
+        <div class="footer-dashboard"> 
         {% block content %}
 
         <h1>Lets add some content here</h1>
 
         {% endblock %}
+        </div>
 
-
-    </div>
 
     <footer class="footer bg-primary text-white py-3 mt-4 text-center col-md-12">
 

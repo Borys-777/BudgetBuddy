@@ -22,7 +22,6 @@
         /* Main content should fill available space */
         .content {
             flex-grow: 1;
-            /* This ensures content takes up space and pushes the footer down */
         }
 
         .footer {
@@ -81,9 +80,12 @@
             <h5> Keep tracking of your expenses easily! </h5>
 
             <hr>
+            {% if not request.user.is_authenticated %}
+
 
             <a class="btn btn-primary" type="button" href="{% url 'register' %}"> Sign up to track your expenses </a>
 
+            {% endif %}
             <div>
 
                 <br>
@@ -93,8 +95,10 @@
 
                     <!-- Image Section -->
                     <div class="image-container">
-                        <img src="https://static.vecteezy.com/system/resources/previews/004/361/569/non_2x/financial-planning-of-the-work-week-free-photo.jpg"
-                            alt="">
+                      <img src= "{% static 'images/heroimage.jpg' %}" alt=""> 
+                         <!-- "https://static.vecteezy.com/system/resources/previews/004/361/569/non_2x/financial-planning-of-the-work-week-free-photo.jpg"
+                            alt=""> -->
+                          
                     </div>
 
                     <!-- Text Section -->

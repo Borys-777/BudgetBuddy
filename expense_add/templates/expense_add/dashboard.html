@@ -4,7 +4,24 @@
 
 {% block content %}
 
-<body>
+    <style>
+        body { 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        
+        }
+
+        footer {
+            position: sticky;
+            bottom: 0;
+        }
+
+        .footer-dashboard {
+            flex: 1; 
+        }
+
+    </style>
 
 <div class="text-center">
 
@@ -19,6 +36,7 @@
 
     <hr>
 
+    <div class="table-responsive">
     <table class="table table-hover table-bordered" id="expenseTable">
         <thead class="table-light">
             <tr>
@@ -41,7 +59,7 @@
                         <td class="cost">{{ expense.cost }}</td>
                         <td> <a href="{% url 'record' expense.id %}">Click here</a> </td>
                     </tr>
-                    <!-- <p><strong>Currency: </strong> EUR</p> -->
+                   
 
                 {% endfor %}
             {% endif %}
@@ -56,17 +74,7 @@
         </tfoot>
 
     </table>
-
-<!-- <footer> 
-    <style> 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100vh;
-    </style>
-</footer> -->
-
-</body>
+</div>
 
 <script src="{% static 'js/app.js' %}"></script>
 
