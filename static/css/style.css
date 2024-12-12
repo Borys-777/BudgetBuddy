@@ -14,3 +14,20 @@
     width:100%;
 }
 
+/* Media query for screens less than 1000px */
+@media screen and (max-width: 1000px) {
+
+    .image-text-container {
+        flex-direction: column; /* Stack the image and text vertically */
+        align-items: center; /* Center the content */
+    }
+
+    .image-container {
+        max-width: 80%; /* Adjust the image size for smaller screens */
+        margin-bottom: 10px; /* Add some space between the image and the text */
+    }
+
+    .text-container {
+        max-width: 80%; /* Adjust the text container size for smaller screens */
+    }
+}
