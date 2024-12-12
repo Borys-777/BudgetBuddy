@@ -33,8 +33,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['8000-borys777-budgetbuddy-94heqs4qgtb.ws.codeinstitute-ide.net', '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
-'https://*.codeinstitute-ide.net',
-'https://*.herokuapp.com']
+    'https://*.codeinstitute-ide.net',
+    'https://*.herokuapp.com']
 
 
 # Application definition
@@ -96,9 +96,9 @@ WSGI_APPLICATION = 'budget.wsgi.application'
 #     }
 # }
 
-DATABASES={
+DATABASES = {
      'default':
- dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
 
 

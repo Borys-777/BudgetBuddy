@@ -33,16 +33,9 @@ class CreateRecordForm(forms.ModelForm):
        class Meta:
 
         model = Expense
-        # fields = ['expense_type', 'currency', 'cost'] # this shows the currency input in the form
+    
         fields = ['expense_type', 'cost']
         # exclude = ['currency']
-
-
-        # def __init__(self, *args, **kwargs):
-        #     super().__init__(*args, **kwargs)
-        #     # Make 'currency' field read-only
-        #     self.fields['currency'].widget.attrs['readonly'] = True
-        #     self.fields['currency'].initial = 'EUR'  # Set initial value to 'EUR'
 
 
 # Updating a record
@@ -52,5 +45,4 @@ class UpdateRecordForm(forms.ModelForm):
        class Meta:
 
         model = Expense
-        # fields = ['expense_type', 'currency', 'cost'] # this shows the currency input in the form
         fields = ['expense_type', 'cost']

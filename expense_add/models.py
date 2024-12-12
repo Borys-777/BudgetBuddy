@@ -58,7 +58,7 @@ class Month(models.Model):
         
     )
     
-    year = models.PositiveIntegerField(blank=False, default=2024)  
+    # year = models.PositiveIntegerField(blank=False, default=2024)  
 
-    def __str__(self):
-        return f"{self.name} {self.month_name} {self.year}"
+    # def __str__(self):
+    #     return f"{self.name} {self.month_name} {self.year}"

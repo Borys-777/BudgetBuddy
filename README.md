@@ -213,6 +213,44 @@ I have resolved the necessary errors. However there are some error messages rema
 ## Create Record.html
 ![createrecord](static/images/readme-images/createrec.jpg) - the same errors with {% extends 'expense_add/base.html' %} and {% endblock %}. HTML Validator can't recognize them and shows an error. 
 
+## Dashboard.html
+The same errors here, related to the {% static files %}
+![dashboard](static/images/readme-images/dashboardvalid.jpg)
+
+
+## Index.html
+The same errors here, related to the {% static files %}
+![index](static/images/readme-images/indexvalid.jpg)
+
+## My login 
+The same errors here, related to the {% static files %}
+
+## Navbar
+Similar errors, related to the {% static files %} 
+
+## Read Record 
+Similar errors, related to Django syntax, inheritance from base.html and {% static files %} 
+
+## Register 
+Similar errors, related to inheritance and Django syntax.
+
+## Update record 
+Similar errors, related to inheritance and Django syntax.
+
+
+
+# CSS Validation 
+I used the W3 CSS Validator to check my CSS script by Direct Input. There are no errors indicated.
+![CSS](static/images/readme-images/cssvalidation.jpg)
+
+
+## Python and Django
+I used the CI Python Linter to check my python scripts. There are a few small errors like the below - mostly lines were too long or there was a missing blank space line / no newline at end of file. I have left some of the error messages as they are related to a too long line or as the result of a comment.
+
+![Python](static/images/readme-images/pythonsettings.jpg)
+
+
+
 
 
 
