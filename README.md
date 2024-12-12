@@ -1,37 +1,7 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Borys Shesterniak,
+# BudgetBuddy Expense App
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-________________________________________________________
-
-
-THIS IS A TEMPLATE ONLY!!! I WILL ADJUST THE TEXT HERE TO MY OWN NEEDS AND PROJECT PURPOSES!!!
-
-# Costly Expenses App
-
-![Money Image](static/images/readme-imgs/money.png)
+![Main page](static/images/readme-images/mainpage.jpg)
 
 Link to the deployed project: https://costly-413690edf851.herokuapp.com/
 
