@@ -11,23 +11,207 @@
 }
 
 .footer {
-    width:100%;
+    width: 100%;
 }
 
 /* Media query for screens less than 1000px */
 @media screen and (max-width: 1000px) {
 
     .image-text-container {
-        flex-direction: column; /* Stack the image and text vertically */
-        align-items: center; /* Center the content */
+        flex-direction: column;
+        /* Stack the image and text vertically */
+        align-items: center;
+        /* Center the content */
     }
 
     .image-container {
-        max-width: 80%; /* Adjust the image size for smaller screens */
-        margin-bottom: 10px; /* Add some space between the image and the text */
+        max-width: 80%;
+        /* Adjust the image size for smaller screens */
+        margin-bottom: 10px;
+        /* Add some space between the image and the text */
     }
 
     .text-container {
-        max-width: 80%; /* Adjust the text container size for smaller screens */
+        max-width: 80%;
+        /* Adjust the text container size for smaller screens */
     }
 }
+
+/* Media query for screens less than 500px */
+@media screen and (max-width: 500px) {
+
+    /* Make the body take full height */
+    body {
+        padding: 10px;
+        flex-direction: column;
+        height: auto;
+        /* Allow content to adapt better */
+    }
+
+    .footer-dashboard {
+        padding: 10px;
+    }
+
+    /* Header */
+    h3 {
+        font-size: 18px;
+        /* Make the title smaller */
+    }
+
+    /* Button adjustment */
+    .btn {
+        width: 100%;
+        /* Make the button full width */
+        padding: 8px;
+        /* Adjust padding for smaller screens */
+        font-size: 14px;
+        /* Adjust text size */
+    }
+
+    /* Table responsive adjustments */
+    .table-responsive {
+        padding: 0;
+    }
+
+    .table {
+        font-size: 12px;
+        /* Smaller text in the table */
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+        /* Adjust padding for smaller table cells */
+    }
+
+    /* Footer sticky fix */
+    footer {
+        position: relative;
+    }
+
+    #expenseTable {
+        font-size: 12px;
+        /* Smaller font size in the table for better fit */
+    }
+
+    #totalCost {
+        font-size: 14px;
+        /* Adjust font size of the total cost */
+    }
+
+    /* Adjust table layout for better visibility on small screens */
+    #expenseTable td {
+        word-wrap: break-word;
+        /* Allow long text in table to break and wrap */
+    }
+
+
+    .container {
+        padding: 10px;
+        /* Reduce padding */
+        margin: 0;
+        /* Remove default margin */
+    }
+
+    .form-layout {
+        padding: 10px;
+        /* Adjust padding for the form */
+        width: 100%;
+        /* Make the form take up full width */
+    }
+
+    h3 {
+        font-size: 18px;
+        /* Adjust the heading size */
+    }
+
+    .btn-block {
+        width: 100%;
+        /* Make the button full width */
+    }
+
+    .text-center p {
+        font-size: 14px;
+        /* Adjust text size */
+    }
+
+    .text-center a {
+        font-size: 14px;
+        /* Adjust the link size */
+    }
+
+}
+
+    /* Media query for screens less than 350px */
+@media screen and (max-width: 350px) {
+
+    body {
+        padding: 5px; /* Reduce padding even more */
+        font-size: 12px; /* Reduce font size overall */
+    }
+
+    h3 {
+        font-size: 16px; /* Reduce title size further */
+    }
+
+    .btn {
+        font-size: 12px; /* Reduce button font size */
+        padding: 6px; /* Reduce padding on buttons */
+    }
+
+    .table {
+        font-size: 10px; /* Further reduce table font size */
+    }
+
+    .table th, .table td {
+        padding: 6px; /* Reduce padding for very small screens */
+    }
+
+    #totalCost {
+        font-size: 12px; /* Reduce the size of the total cost text */
+    }
+
+    /* Ensure table cells break long words properly */
+    #expenseTable td {
+        word-wrap: break-word;
+    }
+}
+
+
+/* Media query for screens less than 315px */
+@media screen and (max-width: 315px) {
+
+    body {
+        padding: 3px; /* Further reduce padding */
+        font-size: 10px; /* Further reduce font size */
+    }
+
+    h3 {
+        font-size: 14px; /* Reduce title font size even more */
+    }
+
+    .btn {
+        font-size: 10px; /* Smaller font size for buttons */
+        padding: 4px; /* Adjust padding for even smaller screens */
+    }
+
+    .table {
+        font-size: 8px; /* Make table font size much smaller */
+    }
+
+    .table th, .table td {
+        padding: 4px; /* Reduce padding even more */
+    }
+
+    #totalCost {
+        font-size: 10px; /* Adjust total cost text size */
+    }
+
+    /* Ensure table cells break long words properly */
+    #expenseTable td {
+        word-wrap: break-word;
+    }
+}
+
+
+  
