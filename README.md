@@ -16,16 +16,17 @@ The primary target audience includes business people, and anyone, looking for op
 
 # User experience /  User Stories
 As a user, I want to be able to:
-- Add a new expense in my account, and track them.
-- Edit an existing expense item so I can have the most recent updated records.
-- Have the functionality in the app to stop me from submitting a cost with incomplete or incorrect information.
-- See the total amount of all my expenses so that I can understand my total spent.
-- Have the functionality in the app so it can save my expense items in my account so that I can get back to them later, when needed.
-- Delete expense items, that are no longer needed / important for me.
-- Get notifications from the app when I login / logout from the account.
-- Get notifications from the app when I create, update, delete expense items in my account.
-- Have the functionality in the app so that only I have the access (and no one else) to my own records at any time.
-- Have an easy-to-navigate website, so I can understand the purpose of the website at a first glance and decide to use the app and create an account.
+- Add a new expense in my account, and track them. [UserStory1](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90613153&issue=Borys-777%7CBudgetBuddy%7C9>)
+- Edit an existing expense item so I can have the most recent updated records.  [UserStory2](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90613485&issue=Borys-777%7CBudgetBuddy%7C10>)
+- Have the functionality in the app to stop me from submitting a cost with incomplete or incorrect information.  [UserStory3](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90614152&issue=Borys-777%7CBudgetBuddy%7C11>)
+- See the total amount of all my expenses so that I can understand my total spent.     [UserStory4](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90614236&issue=Borys-777%7CBudgetBuddy%7C12>)
+- Have the functionality in the app so it can save my expense items in my account so that I can get back to them later, when needed.     [UserStory5](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90614659&issue=Borys-777%7CBudgetBuddy%7C13>)
+- Delete expense items, that are no longer needed / important for me.    [UserStory6](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90614713&issue=Borys-777%7CBudgetBuddy%7C14>)
+- Get notifications from the app when I login / logout from the account.    [UserStory7](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90615055&issue=Borys-777%7CBudgetBuddy%7C15>)
+- Get notifications from the app when I create, update, delete expense items in my account.       [UserStory8](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90615482&issue=Borys-777%7CBudgetBuddy%7C16>)
+- Have the functionality in the app so that only I have the access (and no one else) to my own records at any time.       [UserStory9](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90615856&issue=Borys-777%7CBudgetBuddy%7C17>)
+- Have an easy-to-navigate website, so I can understand the purpose of the website at a first glance and decide to use the app and create an account.         [UserStory10](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90616284&issue=Borys-777%7CBudgetBuddy%7C18>)
+
 
 
 # Agile methodology
@@ -38,13 +39,15 @@ It relates to: [User Story #10 - UX of the app and website] (As a User, I would 
 
 
 
-
 # Features
 The app consists of one main page with many features for the user.
 
 ## Add expenses
-Adds a new expense to the list of expenses including the amount and currency.
-![Add expense](static/images/readme-imgs/add-expense.PNG)
+Adds a new expense to the list of expenses including the type of expense and cost.
+![Add expense](static/images/readme-images/addexpense.jpg)
+![Add expense](static/images/readme-imgages/addexpense2.jpg)
+
+
 
 ## Edit expenses
 Edit an existing expense either the expense name, amount or currency.
