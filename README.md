@@ -202,10 +202,18 @@ Register your account page:
 # Testing and Validation
 I used the W3 HTML Validator to check the HTML on each of my site pages by Direct Input. 
 
+I have resolved the necessary errors. However there are some error messages remaning which are due to the content being created using Django. Mostly with {% load static %} hashtag, which can't be defined as proper by HTML Validator.
 
-I have resolved the necessary errors (extra tags and correcting how width is set in an img tag). However there are some error messages remaning which are due to the content being created using Django Summernote editor in the admin panel.
+ ## Base.html
+![base](static/images/readme-images/basevalidate.jpg)
 
-I used the W3 CSS Validator to check my CSS script by Direct Input. I found no errors! There are 5 warnigns which are just flagging vendor extensions.
+![base2](static/images/readme-images/basevalidate2.jpg)
+
+
+## Create Record.html
+![createrecord](static/images/readme-images/createrec.jpg) - the same errors with {% extends 'expense_add/base.html' %} and {% endblock %}. HTML Validator can't recognize them and shows an error. 
+
+
 
 
 ## Bug Fixes
