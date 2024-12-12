@@ -4,6 +4,18 @@
 
 Link to the deployed project: https://budget--buddy-9063ab813672.herokuapp.com/ 
 
+This project was completed as the final portfolio project for the Code Institute.
+Made by Borys Shesterniak, December 2024.
+
+# Database Planning
+
+I used https://app.diagrams.net/ to create an ERD for my project. 
+![Entity Relation Diagram](static/images/readme-images/basic-erd.jpg)
+
+During the process I realized that I will not be able to complete the whole ERD, as planned at the beginning, due to the lack of time. 
+I decided to pay attention to thre user and Expense model. And implement ExpenseType model in the next sprints.
+I will indicate it in details in the section for the Future Features. 
+
 
 # Purpose of this project
 
@@ -13,8 +25,33 @@ Many people have troubles when it comes to money spending and checking where did
 # Target Audience
 The primary target audience includes business people, and anyone, looking for optimizing and tracking of their monthly budget.  
 
+# Wireframes
+I used Balsamiq to create my wireframes (<https://balsamiq.cloud/sfqofub/pgj5zvp/rAA7E>). The final product looks a bit different from the original plans, although it was a great benefit to keep my project go properly and keep me on the track. The extended features may be implemened in the next sprints. 
+
+![Wireframe1](static/images/readme-images/wireframe1.jpg)
+
+
+![Wireframe2](static/images/readme-images/wireframe2.jpg)
+
+
+![Wireframe3](static/images/readme-images/wireframe3.jpg)
+
+
+![Wireframe4](static/images/readme-images/wireframe.4.jpg)
+
+
+
+# Agile methodology
+Throughout this project, an Agile approach was taken in order to develop the app. User Stories have different acceptance criteria. The project board, as well as the User Stories can be found in the kanban board linked [here](<https://github.com/users/Borys-777/projects/8/views/1>). Kanban Board has these sections: ToDo, In Progress, Done, Could Do, Won't Do. Also, the labels: "Must Do, Should Do, Could Do, Won't Do" help to use the MoSCoW prioritization, while planning and executing of the tasks. Using the Agile approach, with clear tasks and User stories helped a lot to complete the project successfully.
+
+
+# Task Management
+The Kanban board not only tracked user stories but also functioned as a detailed task list. I used it to break down user stories into smaller, actionable tasks, providing clear and manageable development objectives. This approach allowed for better progress tracking and improved collaboration within the team.
+
 
 # User experience /  User Stories
+All the User Stories were mapped to the Kanban Board and you can see them here: 
+
 As a user, I want to be able to:
 - Add a new expense in my account, and track them. [UserStory1](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90613153&issue=Borys-777%7CBudgetBuddy%7C9>)
 - Edit an existing expense item so I can have the most recent updated records.  [UserStory2](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90613485&issue=Borys-777%7CBudgetBuddy%7C10>)
@@ -29,62 +66,102 @@ As a user, I want to be able to:
 
 
 
-# Agile methodology
-Throughout this project, an Agile approach was taken in order to develop the app. User Stories have different acceptance criteria. The project board, as well as the User Stories can be found in the kanban board linked [here](<https://github.com/users/Borys-777/projects/8/views/1>). Using the Agile approach, with clear tasks and User stories helped a lot to complete the project successfully.
-
-
 ### User Interface, Experience and Feedback
 This section shows how the user interacts with the app. If the app is user-friendly and easy-to-navigate.
 It relates to: [User Story #10 - UX of the app and website] (As a User, I would like to have an easy-to-navigate website, so I can understand the purpose of the website at a first glance and decide to use the app and create an account) -[here](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90616284&issue=Borys-777%7CBudgetBuddy%7C18>) 
 
 
 
-# Features
+# Features 
 The app consists of one main page with many features for the user.
 
-## Add expenses
+## Add expense
 Adds a new expense to the list of expenses including the type of expense and cost.
 ![Add expense](static/images/readme-images/addexpense.jpg)
-![Add expense](static/images/readme-imgages/addexpense2.jpg)
+
+![Add expense2](static/images/readme-images/addexpense2.jpg)
 
 
+## Edit expense / record
+Edit an existing expense (expense name, amount).
+![Edit expense](static/images/readme-images/editexpense.jpg)
 
-## Edit expenses
-Edit an existing expense either the expense name, amount or currency.
-![Edit expense](static/images/readme-imgs/edit-expense.PNG)
+![Edit expense2](static/images/readme-images/editexpense2.jpg)
+
+![Edit expense3](static/images/readme-images/editexpense3.jpg)
 
 ## Delete expenses
-Delete an expense, the user is asked to confirm on a modal before deletion.
-![Delete expense](static/images/readme-imgs/delete-expense.PNG)
+Delete an existing expense.
+![Delete expense](static/images/readme-images/deleterecord.jpg)
 
 ## Total cost overview
-The total amount of all the expenses is displayed on the bottom of the list for transparency.
-![Total cost](static/images/readme-imgs/total-cost.PNG)
+The total amount of all the expenses is shown at the bottom of all the expenses:
+![Total cost](static/images/readme-images/totalcost.jpg)
 
 ## User-Friendly Interface
-The UI is user-friendly, simple and therefore easy to navigate.
-![User Interface](static/images/readme-imgs/user-interface.PNG)
+The UI is user-friendly and easy to navigate for the user. The icons for Dashboard and Logout buttons provides additional functionality.
+![User Interface](static/images/readme-images/user-friendly.jpg)
+
+## Navbar 
+The navigation bar with main buttons; Dashboard, Logout - for logged in users. And - Register, Login - for the new users, who idn't create the account yet. 
+![Navbar](static/images/readme-images/navbar.jpg)
+
+![Navbar2](static/images/readme-images/navbar2.jpg)
+
 
 ## Secure authentication
 Robust authentication measures were taken place to safely store each users private data.
-Every user needs to authenticate themselves before accessing the features and data.
-The authentication features include Sign In, Sign up and Sign out.
-### Sign In
-![Sign In](static/images/readme-imgs/sign-in.PNG)
-### Sign Up
-![Sign Up](static/images/readme-imgs/sign-up.PNG)
-### Sign Out
-![Sign Out](static/images/readme-imgs/sign-out.PNG)
+Every user needs to authenticate themselves and login to their account before accessing the features and data.
+The authentication features include Register, Log in and Log out.
+### Register
+![Register](static/images/readme-images/register.jpg)
+### Login
+![Login](static/images/readme-images/login.jpg)
+### Log Out
+![Log Out](static/images/readme-images/logout.jpg)
+
+## Responsive Design:
+The website is built to be responsive, ensuring a seamless user experience across different screen sizes. 
+On smaller screens, the navbar collapses into a hamburger menu for easier navigation.
+
+
+## Additional Security Features:
+Users are redirected to the sign-in page if they attempt unauthorized actions. So unathorized users can not enter and manipulate other registered user's records. Unathorized users can not edit / delete the registered users' records, as such records are not visible for the unauthorized users. 
+
 
 ## Future features
 
-Future features might include.
+Future features might include:
 
-- Total cost that calculates all currencies together with consideration of their current exchange rates.
+- The total cost shown in EUR:
+![TotalCost](static/images/readme-images/future-feature.jpg)
 
-- Analytics that analyze a users spending habits over time to let them know where they could improve.
+- Adding more currencies and converting them into 1 common currency, by using JS. 
 
-- Reminders for open payments or upcoming bills.
+- Adding Month model, for the user to set and check expenses for the specific months. 
+
+- Adding an ExpenseType Model, so the user make categories for different expense types. 
+
+- Analytics for the users spending habits over time - to show them the possible ways to improve and save money in the future.
+
+
+
+# Technologies Used
+
+- HTML 5
+- CSS 3
+- JavaScript
+- Django
+- Python
+- Bootstrap 5 
+- Balsamiq
+- Font Awesome 
+- GitHub 
+- Git 
+- Vecteezy
+- Google Fonts
+- Heroku 
+
 
 ## Bug Fixes
 - Bug: Two different users can't name their items the same.
@@ -115,15 +192,7 @@ Other than that the default font has been left.
 ## User interface
 ![UI](static/images/readme-imgs/wireframe.PNG)
 
-# Technology
 
-## Languages
-
-- HTML 5
-- CSS 3
-- JavaScript
-- Django
-- Python
 
 ## Django Packages
 
@@ -237,7 +306,26 @@ This epic focuses on providing users with secure access to their accounts while 
 
 # Credits
 
-- The delete confirmation modal was adapted from the walkthrough project.
+- The layout of the page was used with the help of: https://bootswatch.com/
+- Other projects where I took the inspiration, help and ideas: 
+(<https://github.com/Stephen-Bevan/Magical-Maths-Monkey/tree/main>)  - our common Hackathon project 
+(<https://github.com/Borys-777/ukrainians_in_ireland/tree/main >) - my previous project 
+(<https://github.com/Tekali7/Costly/tree/main>), (<https://costly-413690edf851.herokuapp.com/>) - project from previous cohorts 
+(<https://creating-database-14nov-c059f8c1f0b2.herokuapp.com/>) - Walkthrough Blog project 
+(<https://github.com/Borys-777/django-blog-14-Nov/tree/main>) , (<https://creating-database-14nov-c059f8c1f0b2.herokuapp.com/bootstrap-bliss-simplifying-web-development-with-bootstrap/>) - my previous Walkthrough project
+(<https://github.com/davidcalikes/mypse.ie>), (<https://mypse.herokuapp.com/>) - David's project
+(<https://github.com/katiejanecoughlan/sojourn-scribbles-V3>) - Katie's project
+(<https://github.com/cloud-with-django/Django-CRM-mastery-app-Project-1-YT/tree/main>) - similar project from Youtube 
+ - LMS for teaching content: (<https://learn.codeinstitute.net/ci_program/fsbootcamp_with_hackathons_v2_2>)
+
+- Bootstrap technologies: (<https://getbootstrap.com/docs/4.0/components/card/>)
+
+- Youtube resources: (<https://www.youtube.com/watch?v=pqWyUAT38e0&t=7810s>), (<https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy>), (<https://www.youtube.com/watch?v=hWhWdf2gsfQ&list=PL_SWATNcLmYmlMmEIb18iZldUEwAOONke>), (<https://www.youtube.com/watch?v=l6xIYIH87cI&list=PL0rhqMLHaq3C8qmw7LmEdinUfYXv4IxQc&index=2 >)
+
+
+- Photos were used from this website: (<https://www.vecteezy.com/photo/4361569-financial-planning-of-the-work-week>), inspiration from these as well: (<https://www.vecteezy.com/photo/4361569-financial-planning-of-the-work-week>),  (<https://www.vecteezy.com/photo/28113098-photo-realistic-of-calculator-money-and-paper-with-graphic-chart-on-table-ai-generative>) , (<https://www.vecteezy.com/photo/28114675-photo-realistic-of-calculator-money-and-paper-with-graphic-chart-on-table-ai-generative>)
+
+
 - The HTML for displaying Django messages was adapted from the walkthrough project.
 - The 10 lines in the base template's main section were adapted from the walkthrough project.
 - The header in the base template was adapted from the walkthrough project.
