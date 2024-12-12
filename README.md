@@ -136,6 +136,8 @@ Future features might include:
 - The total cost shown in EUR:
 ![TotalCost](static/images/readme-images/future-feature.jpg)
 
+- Adding a favicon to the page. As for now I didn't implement it, due to the lack of time (and concentrating mostly on the main functionality).
+
 - Adding more currencies and converting them into 1 common currency, by using JS. 
 
 - Adding Month model, for the user to set and check expenses for the specific months. 
@@ -161,6 +163,49 @@ Future features might include:
 - Vecteezy
 - Google Fonts
 - Heroku 
+
+
+# Testing and Validation
+## Responsiveness
+
+I used the dev tools on chrome to test the website for responsiveness. Here are the screenshots to demonstrate responsive design across different devices: mobile, tablet and laptop.
+Navbar collapses to a burger bar on smaller screen sizes.
+The pages of the website are responsive on different devices:
+
+Dashboard:
+
+![Responsive](static/images/readme-images/laptop.jpg)
+
+![Responsive2](static/images/readme-images/tablet.jpg)
+
+![Responsive3](static/images/readme-images/phone.jpg)
+
+
+Main page:
+
+![Responsive](static/images/readme-images/laptop2.jpg)
+
+![Responsive2](static/images/readme-images/tablet2.jpg)
+
+![Responsive3](static/images/readme-images/phone2.jpg)
+
+
+Register your account page:
+
+![Responsive](static/images/readme-images/laptop3.jpg)
+
+![Responsive2](static/images/readme-images/tablet3.jpg)
+
+![Responsive3](static/images/readme-images/phone3.jpg)
+
+
+# Testing and Validation
+I used the W3 HTML Validator to check the HTML on each of my site pages by Direct Input. 
+
+
+I have resolved the necessary errors (extra tags and correcting how width is set in an img tag). However there are some error messages remaning which are due to the content being created using Django Summernote editor in the admin panel.
+
+I used the W3 CSS Validator to check my CSS script by Direct Input. I found no errors! There are 5 warnigns which are just flagging vendor extensions.
 
 
 ## Bug Fixes
