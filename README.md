@@ -1,89 +1,43 @@
-
 # BudgetBuddy Expense App
 
 ![Main page](static/images/readme-images/mainpage.jpg)
 
-Link to the deployed project: https://costly-413690edf851.herokuapp.com/
+Link to the deployed project: https://budget--buddy-9063ab813672.herokuapp.com/ 
+
 
 # Purpose of this project
 
-The Costly app is here to let a user better organize, display, edit and delete their expenses. By simply clicking on 'Add Expense' and filling out the simple form the user can add their costs to a list. They can also edit these expenses or delete them. Additionally the user gets informed about their total cost of all the expenses.
+Many people have troubles when it comes to money spending and checking where did the money go. So, its difficult to understand how much money spent during a certain period of time. BudgetBuddy money tracking app will help the customer to organize their finances in a proper way, help them track their expenses and organize their finances.
 
-# Table of contents
 
-* [User demographic](<https://github.com/Tekali7/Costly#user-demographic>)
-  * [User experience](<https://github.com/Tekali7/Costly#user-experience>)
-* [Agile methodology](<https://github.com/Tekali7/Costly#agile-methodology>)
-  * [Epics and user stories](<https://github.com/Tekali7/Costly#epics-and-user-stories>)
-  * [User Authentication and Authorization](<https://github.com/Tekali7/Costly#user-authentication-and-authorization>)
-  * [Expense Management and Validation](<https://github.com/Tekali7/Costly#expense-management-and-validation>)
-  * [User Interface, Experience and Feedback](<https://github.com/Tekali7/Costly#user-interface-experience-and-feedback>)
-* [Features](<https://github.com/Tekali7/Costly#features>)
-  * [Add expenses](<https://github.com/Tekali7/Costly#add-expenses>)
-  * [Edit expenses](<https://github.com/Tekali7/Costly#edit-expenses>)
-  * [Delete expenses](<https://github.com/Tekali7/Costly#delete-expenses>)
-  * [Total cost overview](<https://github.com/Tekali7/Costly#total-cost-overview>)
-  * [User-Friendly Interface](<https://github.com/Tekali7/Costly#user-friendly-interface>)
-  * [Secure authentication](<https://github.com/Tekali7/Costly#secure-authentication>)
-  * [Future features](<https://github.com/Tekali7/Costly#future-features>)
-  * [Bug Fixes](<https://github.com/Tekali7/Costly#bug-fixes>)
-* [Design](<https://github.com/Tekali7/Costly#design>)
-  * [Color](<https://github.com/Tekali7/Costly#color>)
-  * [Typography](<https://github.com/Tekali7/Costly#typography>)
-* [Wireframes](<https://github.com/Tekali7/Costly#wireframes>)
-  * [Entity relationship diagram](<https://github.com/Tekali7/Costly#entity-relationship-diagram>)
-  * [User interface](<https://github.com/Tekali7/Costly#user-interface>)
-* [Technology](<https://github.com/Tekali7/Costly#technology>)
-  * [Languages](<https://github.com/Tekali7/Costly#languages>)
-  * [Django Packages](<https://github.com/Tekali7/Costly#django-packages>)
-  * [Frameworks - Libraries - Programs Used](<https://github.com/Tekali7/Costly#frameworks---libraries---programs-used>)
-* [Testing](<https://github.com/Tekali7/Costly#testing>)
-* [Project Creation](<https://github.com/Tekali7/Costly#project-creation>)
-  * [Creating the Django app](<https://github.com/Tekali7/Costly#creating-the-django-app>)
-  * [Deployment of This Project](<https://github.com/Tekali7/Costly#deployment-of-this-project>)
-  * [Final Deployment](<https://github.com/Tekali7/Costly#final-deployment>)
-  * [Forking This Project](<https://github.com/Tekali7/Costly#forking-this-project>)
-  * [Cloning This Project](<https://github.com/Tekali7/Costly#cloning-this-project>)
-* [Credits](<https://github.com/Tekali7/Costly#credits>)
+# Target Audience
+The primary target audience includes business people, and anyone, looking for optimizing and tracking of their monthly budget.  
 
-# User demographic
 
-The user demographic for an expense tracking app typically includes people from many age groups, families managing household finances, and small business owners tracking business expenses. These users look for ways to gain better control over their finances, track spending habits, and achieve their financial goals.
-
-# User experience
+# User experience /  User Stories
 As a user, I want to be able to:
-- Securely log in to my account using authentication credentials.
-- Access and view my own expenses.
-- Add new expenses.
-- Edit or update details of my existing expenses.
-- Ensure that my financial data remains private and secure.
+- Add a new expense in my account, and track them.
+- Edit an existing expense item so I can have the most recent updated records.
+- Have the functionality in the app to stop me from submitting a cost with incomplete or incorrect information.
+- See the total amount of all my expenses so that I can understand my total spent.
+- Have the functionality in the app so it can save my expense items in my account so that I can get back to them later, when needed.
+- Delete expense items, that are no longer needed / important for me.
+- Get notifications from the app when I login / logout from the account.
+- Get notifications from the app when I create, update, delete expense items in my account.
+- Have the functionality in the app so that only I have the access (and no one else) to my own records at any time.
+- Have an easy-to-navigate website, so I can understand the purpose of the website at a first glance and decide to use the app and create an account.
+
 
 # Agile methodology
+Throughout this project, an Agile approach was taken in order to develop the app. User Stories have different acceptance criteria. The project board, as well as the User Stories can be found in the kanban board linked [here](<https://github.com/users/Borys-777/projects/8/views/1>). Using the Agile approach, with clear tasks and User stories helped a lot to complete the project successfully.
 
-Throughout this project, an Agile approach was taken in order to develop the app. Each of the three Epics were broken down into smaller User Stories, which were then refined into more manageable Tasks. Each of the User Stories has different acceptance criteria. The User Stories can be found in the kanban board linked [here](<https://github.com/users/Tekali7/projects/3/views/1>). This made the overall project much more manageable to build.
-
-## Epics and user stories
-Epics which I came up with for the app before the start of the project, which were then rewritten to fit the app in a more tailored way.
-
-### User Authentication and Authorization
-To ensure the security and privacy of user data within the expense tracking app, implementing robust user authentication and authorization mechanisms is essential.
-This epic focuses on providing users with secure access to their accounts while restricting access to unauthorized users. By implementing user authentication, users can securely log in to their accounts using unique credentials, such as usernames and passwords. Additionally, user authorization ensures that authenticated users have appropriate permissions to access specific features and data within the app. This epic should show the need for a secure way in and out of the app.
-- [User Story #10 Authorization](<https://github.com/Tekali7/Costly/issues/10>)
-
-### Expense Management and Validation
- Effective management and validation of expenses are crucial aspects of the app which ensure the accuracy and reliability of financial data. This epic focuses on providing users with comprehensive tools for managing their expenses, including adding, editing, and deleting expenses. Additionally, the app also needs validation mechanisms to verify the expense data entered by users. By enabling users to track expenses accurately and reliably, this epic aims to empower users to make informed financial decisions and achieve their financial goals effectively.
-- [User Story #1 Track Expenses](<https://github.com/Tekali7/Costly/issues/1>)
-- [User Story #2 Edit expenses](<https://github.com/Tekali7/Costly/issues/2>)
-- [User Story #4 Validate expenses](<https://github.com/Tekali7/Costly/issues/4>)
-- [User Story #5 Total amount of costs](<https://github.com/Tekali7/Costly/issues/5>)
-- [User Story #8 Saving expenses for each user](<https://github.com/Tekali7/Costly/issues/8>)
-- [User Story #3 Delete expenses](<https://github.com/Tekali7/Costly/issues/3>)
-- [User Story #6 Expense currency](<https://github.com/Tekali7/Costly/issues/6>)
 
 ### User Interface, Experience and Feedback
-This epic emphasizes optimizing the UI of the app. It involves the users need for a clean and easy to navigate page. Additionally, the epic focuses on implementing feedback features such as messages when the user adds, edits or deletes an expense. The user should also get a deletion modal upon clicking the delete button, which asks the user to confirm the deletion of an expense. By prioritizing UI enhancements and feedback, this epic aims to raise user satisfaction, and overall app usability.
-- [User Story #7 Friendly UI](<https://github.com/Tekali7/Costly/issues/7>)
-- [User Story #9 User feedback](<https://github.com/Tekali7/Costly/issues/9>)
+This section shows how the user interacts with the app. If the app is user-friendly and easy-to-navigate.
+It relates to: [User Story #10 - UX of the app and website] (As a User, I would like to have an easy-to-navigate website, so I can understand the purpose of the website at a first glance and decide to use the app and create an account) -[here](<https://github.com/users/Borys-777/projects/8/views/1?pane=issue&itemId=90616284&issue=Borys-777%7CBudgetBuddy%7C18>) 
+
+
+
 
 # Features
 The app consists of one main page with many features for the user.
@@ -208,6 +162,8 @@ Other than that the default font has been left.
 
 # Testing
 The tests can be found [here](<https://github.com/Tekali7/Costly/blob/main/TESTS.md>)
+### User Authentication and Authorization
+This epic focuses on providing users with secure access to their accounts while restricting access to unauthorized users. By implementing user authentication, users can securely log in to their accounts using unique credentials, such as usernames and passwords. Additionally, user authorization ensures that authenticated users have appropriate permissions to access specific features and data within the app.
 
 # Project Creation
 ## Creating the Django app
