@@ -100,6 +100,10 @@ The total amount of all the expenses is shown at the bottom of all the expenses:
 
 ## User-Friendly Interface
 The UI is user-friendly and easy to navigate for the user. The icons for Dashboard and Logout buttons provides additional functionality.
+The user gets notification messages when he logs in / logs out: 
+![Notification](static/images/readme-images/notification.jpg)
+
+
 ![User Interface](static/images/readme-images/user-friendly.jpg)
 
 ## Navbar 
@@ -162,6 +166,21 @@ Future features might include:
 - Vecteezy
 - Google Fonts
 - Heroku 
+
+
+## Django Packages
+
+- Gunicorn: As the server for Heroku
+- Psycopg2: As an adaptor for Python and DB
+- Crispy Forms: To style the forms
+
+## Frameworks - Libraries - Programs Used
+
+- PEP8: PEP8 was used to validate all the Python code
+- W3C - HTML: W3C- HTML was used to validate all the HTML code
+- W3C - CSS: W3C - CSS was used to validate the CSS code
+- Google Chrome Dev Tools: To check App responsiveness and debugging
+
 
 
 # Testing and Validation
@@ -241,6 +260,13 @@ Similar errors, related to inheritance and Django syntax.
 # CSS Validation 
 I used the W3 CSS Validator to check my CSS script by Direct Input. There are no errors indicated.
 ![CSS](static/images/readme-images/cssvalidation.jpg)
+
+Also, for CSS, I used WCAG Contrast checker.
+It shows some contrst issues. I tried to make the buttons bigger on the website, and they are already big enough. Although the WCAG recommends to make them even bigger. I will consider making them even bigger, in the next sprint.
+![Contrast](static/images/readme-images/contrast.jpg)
+
+Also, the text in the form isn't quite big. The issue is that it's a Bootstrap form, which seems can't be edited. And if we make the text bigger, it will be too much for the for size. So, consider leaving as it is for the momnt, as it doesn't influence User Experience much.
+![Contrast2](static/images/readme-images/contrast2.jpg)
 
 
 ## Python and Django
@@ -343,82 +369,18 @@ Gitpod built-in functionality also helped me to work with Python code.
 
 
 
+## Known Bugs 
+
+- Currently there's a bug with a small space below the footer on the main page, which I wasn't able to fix. 
+I tried adjusting the footer with flex, stick on bottom, but still that not completely removed the error.
+I will work on fixing in the next sprints.
+
+![FooterBug](static/images/readme-images/footerbug.jpg)
 
 
 
-## Bug Fixes
-- Bug: Two different users can't name their items the same.
-
-  - Working solution: Remove 'unique=True' from the item field in the Model.
-
-- Bug: User can't add an expense.
-  - Working solution: Clean up forms file and add widgets.
-
-Currently theres a bug where a white bar with a slash appears on top of the page.
-I couldn't find the error for this just yet.
-
-# Design
-## Color
-![Color](static/images/readme-imgs/color.PNG)
-![Contrast](static/images/readme-imgs/contrast.PNG)
-
-The app adopts a dark color scheme to provide contrast and ensure visibility against the background. This choice helps users quickly locate features and enhances overall usability.
-
-## Typography
-The app name stands out with a simple serif font in the navbar, and the 'page/form titles' stand out with 'Franklin Gothic Medium'.
-Other than that the default font has been left.
-
-# Wireframes
-## Entity relationship diagram
-![ERD](static/images/readme-imgs/erd.PNG)
-
-## User interface
-![UI](static/images/readme-imgs/wireframe.PNG)
 
 
-
-## Django Packages
-
-- Gunicorn: As the server for Heroku
-
-- Dj_database_url: To parse the database URL from the environment variables in Heroku
-
-- Psycopg2: As an adaptor for Python and DB
-
-- Allauth: For authentication, registration and account management
-
-- Crispy Forms: To style the forms
-
-## Frameworks - Libraries - Programs Used
-
-- Bootstrap: Was used to style the app
-
-- Jquery: All the scripts were written using jquery library
-
-- Git: Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
-
-- GitHub: GitHub is used to store the project's code after being pushed from Git
-
-- Heroku: Heroku was used to deploy the live project
-
-- PostgreSQL: With ElephantSQL through Heroku
-
-- Gitpod: Gitpod was used to create and edit the app
-
-- Lucidchart: Lucidchart was used to create the database diagram
-
-- PEP8: PEP8 was used to validate all the Python code
-
-- W3C - HTML: W3C- HTML was used to validate all the HTML code
-
-- W3C - CSS: W3C - CSS was used to validate the CSS code
-
-- Google Chrome Dev Tools: To check App responsiveness and debugging
-
-# Testing
-The tests can be found [here](<https://github.com/Tekali7/Costly/blob/main/TESTS.md>)
-### User Authentication and Authorization
-This epic focuses on providing users with secure access to their accounts while restricting access to unauthorized users. By implementing user authentication, users can securely log in to their accounts using unique credentials, such as usernames and passwords. Additionally, user authorization ensures that authenticated users have appropriate permissions to access specific features and data within the app.
 
 # Project Creation
 ## Creating the Django app

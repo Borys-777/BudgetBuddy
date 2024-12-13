@@ -32,23 +32,19 @@ def register(request):
     # form = CreateUserForm()
 
     if request.method == "POST":
-
         form = CreateUserForm(request.POST)
-
         if form.is_valid():
-
             form.save()
-
             messages.success(request, "Your account was created successfully")
-
             return redirect('my-login')
+        else:
+            messages.error(request, "Error creating your account")
 
     else:
         form = CreateUserForm()  # Initialize the form for GET request
 
-        context = {'form':form}
-
-        return render(request, 'expense_add/register.html', context=context)
+    context = {'form':form}
+    return render(request, 'expense_add/register.html', context=context)
 
     # User login 
 
