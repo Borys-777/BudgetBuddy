@@ -103,7 +103,7 @@ The UI is user-friendly and easy to navigate for the user. The icons for Dashboa
 ![User Interface](static/images/readme-images/user-friendly.jpg)
 
 ## Navbar 
-The navigation bar with main buttons; Dashboard, Logout - for logged in users. And - Register, Login - for the new users, who idn't create the account yet. 
+The navigation bar with main buttons; Dashboard, Logout - for logged in users. And - Register, Login - for the new users, who didn't create the account yet. 
 ![Navbar](static/images/readme-images/navbar.jpg)
 
 ![Navbar2](static/images/readme-images/navbar2.jpg)
@@ -120,9 +120,6 @@ The authentication features include Register, Log in and Log out.
 ### Log Out
 ![Log Out](static/images/readme-images/logout.jpg)
 
-## Responsive Design:
-The website is built to be responsive, ensuring a seamless user experience across different screen sizes. 
-On smaller screens, the navbar collapses into a hamburger menu for easier navigation.
 
 
 ## Additional Security Features:
@@ -137,6 +134,8 @@ Future features might include:
 ![TotalCost](static/images/readme-images/future-feature.jpg)
 
 - Adding a favicon to the page. As for now I didn't implement it, due to the lack of time (and concentrating mostly on the main functionality).
+
+- Adding a notification message to the user when he is not logged in and tries to read/edit/delete the record of the authorized user.
 
 - Adding more currencies and converting them into 1 common currency, by using JS. 
 
@@ -252,14 +251,14 @@ Gitpod built-in functionality also helped me to work with Python code.
 
 
 
-### Manual Testing Results
+## Manual Testing Results
 
 ### MAIN PAGE (index.html)
 
 | Test                                     | Result |
 |-----------------------------------------|--------|
 | Layout has a proper styling, text is easy to read           | Pass   |
-| Picture is properly seen and has good color contrast            | Pass   |
+| Picture is properly seen and has a good color contrast            | Pass   |
 | All the buttons and links work properly.               | Pass   |
 
 
@@ -267,50 +266,16 @@ Gitpod built-in functionality also helped me to work with Python code.
 
 | Test                                    | Result |
 |----------------------------------------|--------|
-| Secure login functionality             | Pass   |
+| Secure registration / create account functionality             | Pass   |
 | Redirect after successful registration | Pass   |
-
-### ABOUT PAGE
-
-| Test                                     | Result |
-|-----------------------------------------|--------|
-| Blog posts displayed as cards           | Pass   |
-| Filters (user and country) functionality| Pass   |
-| Ability to click on a blog card         | Pass   |
-| Commenting functionality                | Pass   |
-| Edit and delete comment functionality   | Pass   |
-| User must be logged in to comment/edit/delete | Pass |
-| User must be logged in to delete blog post  | Pass |
-| User cannot delete/edit others' comments | Pass |
-| Comments require admin approval         | Pass   |
-| Prevention of deleting other users' posts  | Pass   |
-| Prevention of posting as other users        | Pass   |
-
-
-
-### FOOTER/NAV BAR
-
-| Test                                     | Result |
-|-----------------------------------------|--------|
-| Navigation links functionality          | Pass   |
-| Social media links functionality        | Pass   |
-
-### PROFILE PAGE
-
-| Test                                     | Result |
-|-----------------------------------------|--------|
-| Access requires login                   | Pass   |
-| Edit profile form functionality        | Pass   |
-| Post creation functionality             | Pass   |
-| Redirect after post submission          | Pass   |
+| Create account form is properly shown and easy to navigate | Pass   |
 
 ### LOGIN PAGE
 
 | Test                                    | Result |
 |----------------------------------------|--------|
-| Secure signup functionality            | Pass   |
+| Secure login functionality            | Pass   |
 | Redirect after successful login        | Pass   |
-
 
 
 ### LOGOUT PAGE
@@ -320,16 +285,63 @@ Gitpod built-in functionality also helped me to work with Python code.
 | Logout functionality                   | Pass   |
 | Redirect after successful logout       | Pass   |
 
+
+### DASHBOARD PAGE
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| All the user's records can be properly read in the table                 | Pass   |
+| The total number of records (expenses) is calculated and shown properly at the bottom of the table     | Pass   |
+| User can Add new expense or "click here" to see more details and edit/delete record      | Pass   |
+| User must be logged in to edit/delete | Pass |
+| User must be logged in to delete record | Pass |
+| User cannot view/edit/delete/ others' records | Pass |
+
+
+### CREATE RECORD PAGE
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| Create record functionality                  | Pass   |
+| Values can be added properly into the form       | Pass   |
+| Redirect after the record is created         | Pass   |
+
+
+### UPDATE RECORD PAGE
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| Update record functionality                  | Pass   |
+| Values can be edited / updated properly in the form       | Pass   |
+| Redirect after the record is updated         | Pass   |
+
+
+### DELETE RECORD PAGE
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| Delete record functionality                  | Pass   |
+| Values can be deleted properly using the button  Delete Record     | Pass   |
+| Redirect after the record is deleted         | Pass   |
+
+
+### FOOTER/NAV BAR
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| Buttons (BudgetBuddy, Login, Logout, Dashboard, Register) are functional and work properly         | Pass   |
+| Link in the footer works fine and redirects in the new page to GitHub        | Pass   |
+
+
 ### SECURITY
 
 | Test                                                             | Result |
 |-----------------------------------------------------------------|--------|
-| Prevention of brute force actions via URL                        | Pass   |
-| Redirect to sign-in page after attempted unauthorized action | Pass   |
+| Redirect to log-in / register page after attempted unauthorized action | Pass   |
   
-![Redirect after brute force attempt](/static/images/readme/bruteforce.png)
+![Redirect after attempted unauthorized action](static/images/readme-images/redirect.jpg)
 
-##### [ Back to Top ](#table-of-contents)
+
 
 
 
