@@ -248,8 +248,88 @@ I used the W3 CSS Validator to check my CSS script by Direct Input. There are no
 I used the CI Python Linter to check my python scripts. There are a few small errors like the below - mostly lines were too long or there was a missing blank space line / no newline at end of file. I have left some of the error messages as they are related to a too long line or as the result of a comment.
 
 ![Python](static/images/readme-images/pythonsettings.jpg)
+Gitpod built-in functionality also helped me to work with Python code.
 
 
+
+### Manual Testing Results
+
+### MAIN PAGE (index.html)
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| Layout has a proper styling, text is easy to read           | Pass   |
+| Picture is properly seen and has good color contrast            | Pass   |
+| All the buttons and links work properly.               | Pass   |
+
+
+### REGISTRATION PAGE
+
+| Test                                    | Result |
+|----------------------------------------|--------|
+| Secure login functionality             | Pass   |
+| Redirect after successful registration | Pass   |
+
+### ABOUT PAGE
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| Blog posts displayed as cards           | Pass   |
+| Filters (user and country) functionality| Pass   |
+| Ability to click on a blog card         | Pass   |
+| Commenting functionality                | Pass   |
+| Edit and delete comment functionality   | Pass   |
+| User must be logged in to comment/edit/delete | Pass |
+| User must be logged in to delete blog post  | Pass |
+| User cannot delete/edit others' comments | Pass |
+| Comments require admin approval         | Pass   |
+| Prevention of deleting other users' posts  | Pass   |
+| Prevention of posting as other users        | Pass   |
+
+
+
+### FOOTER/NAV BAR
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| Navigation links functionality          | Pass   |
+| Social media links functionality        | Pass   |
+
+### PROFILE PAGE
+
+| Test                                     | Result |
+|-----------------------------------------|--------|
+| Access requires login                   | Pass   |
+| Edit profile form functionality        | Pass   |
+| Post creation functionality             | Pass   |
+| Redirect after post submission          | Pass   |
+
+### LOGIN PAGE
+
+| Test                                    | Result |
+|----------------------------------------|--------|
+| Secure signup functionality            | Pass   |
+| Redirect after successful login        | Pass   |
+
+
+
+### LOGOUT PAGE
+
+| Test                                    | Result |
+|----------------------------------------|--------|
+| Logout functionality                   | Pass   |
+| Redirect after successful logout       | Pass   |
+
+### SECURITY
+
+| Test                                                             | Result |
+|-----------------------------------------------------------------|--------|
+| Prevention of brute force actions via URL                        | Pass   |
+| Redirect to sign-in page after attempted unauthorized action | Pass   |
+  
+![Redirect after brute force attempt](/static/images/readme/bruteforce.png)
+
+##### [ Back to Top ](#table-of-contents)
 
 
 
