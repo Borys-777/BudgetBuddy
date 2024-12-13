@@ -220,7 +220,8 @@ Register your account page:
 # Testing and Validation
 I used the W3 HTML Validator to check the HTML on each of my site pages by Direct Input. 
 
-I have resolved the necessary errors. However there are some error messages remaning which are due to the content being created using Django. Mostly with {% load static %} hashtag, which can't be defined as proper by HTML Validator.
+I have resolved the necessary errors. However there are some error messages remaning which are due to the content being created using Django. Mostly with {% load static %} hashtag, which can't be defined as proper by HTML Validator. 
+Also there are errors related to &nbsp tags, style elements in the body, meta charset and description, ul lists, which are mostly related to Django, inheritance of the main document from base.html. I fixed some of these errors, but considering the time limits - will work more on them in the next sprints. 
 
  ## Base.html
 ![base](static/images/readme-images/basevalidate.jpg)
@@ -379,79 +380,78 @@ I will work on fixing in the next sprints.
 
 
 
+# Deployment 
+
+## Deployment Steps:
+
+### Creating the Heroku App
+
+- Begin by signing up or logging in to Heroku.
+- In the Heroku Dashboard, click on 'New' and then select 'Create New App'.
+- Choose a unique name for your project, like "Travel Buddies".
+- Select the EU region.
+- Click on "Create App".
+- In the "Deploy" tab, choose GitHub as the deployment method.
+- Connect your GitHub account and find/connect your GitHub repository.
+
+#### Setting Up Environment Variables
+
+- Create `env.py` in the top level of the Django app.
+- Import `os` in `env.py`.
+- Set up necessary environment variables in `env.py`, including the secret key and database URL.
+- Update `settings.py` to use environment variables for secret key and database.
+- Configure environment variables in the Heroku "Settings" tab under "Config Vars".
+- Migrate the models to the new database connection in the terminal.
+- Configure static files and templates directories in `settings.py`.
+- Add Heroku to the `ALLOWED_HOSTS` list.
+
+#### Creating Procfile and Pushing Changes
+
+- Create a `Procfile` in the top level directory.
+- Add the command to run the project in the `Procfile`.
+- Add, commit, and push the changes to GitHub.
+
+#### Heroku Deployment
+
+- In Heroku, navigate to the Deployment tab and deploy the branch manually.
+- Monitor the build logs for any errors.
+- Upon successful deployment, Heroku will display a link to the live site.
+- Make sure to resolve any deployment errors by adjusting the code as necessary.
+
+
+### Forking the Repository
+
+Forking the GitHub Repository allows you to create a copy of the original repository without affecting it. Follow these steps:
+
+- Log in to GitHub or create an account.
+- Visit the [repository link](https://github.com/Borys-777/BudgetBuddy?tab=readme-ov-file#target-audience).
+- Click on "Fork" at the top of the repository.
+
+### Creating a Clone of the Repository
+
+Creating a clone enables you to make a local copy of the repository. Follow these steps:
+
+- Navigate to the [Budget Buddy repository](https://github.com/Borys-777/BudgetBuddy?tab=readme-ov-file#target-audience).
+- Click on the <>Code button.
+- Select the "HTTPS" option under the "Local" tab and copy the URL.
+- Open your terminal and change the directory to your desired location.
+- Use `git clone` followed by the copied repository URL.
 
 
 
-# Project Creation
-## Creating the Django app
+# Resources
 
-1. Go to the Code Institute Gitpod Full Template [Template](https://github.com/Code-Institute-Org/gitpod-full-template)
-2. Click on Use This Template
-3. Once the template is available in your repository click on Gitpod
-4. When the image for the template and the Gitpod are ready open a new terminal to start a new Django App
-5. Install Django and gunicorn: `pip3 install django gunicorn`
-6. Install supporting database libraries dj_database_url and psycopg2 library: `pip3 install dj_database_url psycopg2`
-7. Create file for requirements: in the terminal window type `pip freeze --local > requirements.txt`
-8. Create project: in the terminal window type django-admin startproject your_project_name
-9. Create app: in the terminal window type python3 manage.py startapp your_app_name
-10. Add app to the list of installed apps in settings.py file: you_app_name
-11. Migrate changes: in the terminal window type python3 manage.py migrate
-12. Run the server to test if the app is installed, in the terminal window type python3 manage.py runserver
-13. If the app has been installed correctly the window will display The install worked successfully! Congratulations!
+- [Code Institute Full Stack Development course materials](https://codeinstitute.net/) 
+- [Bootstrap docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [Stack overflow](https://stackoverflow.com/)
+- [Code Institude Slack](https://slack.com/)
 
-## Deployment of This Project
 
-* This site was deployed by completing the following steps:
+# Credits and Acknowledgements
 
-1. Log in to [Heroku](https://id.heroku.com) or create an account
-2. On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App
-3. You must enter a unique app name
-4. Next select your region
-5. Click on the Create App button
-6. Click in resources and select Heroku Postgres database
-7. Click Reveal Config Vars and add a new record with SECRET_KEY
-8. Click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
-9. Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`
-10. The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
-11. Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
-12. Scroll to the top of the page and choose the Deploy tab
-13. Select Github as the deployment method
-14. Confirm you want to connect to GitHub
-15. Search for the repository name and click the connect button
-16. Scroll to the bottom of the deploy page and select the preferred deployment type
-17. Click either Enable Automatic Deploys for automatic deployment when you push updates to Github or click Manual Deploys
-
-## Final Deployment 
-
-1. Create a runtime.txt `python-3.12.3`
-2. Create a Procfile `web: gunicorn your_project_name.wsgi`
-3. When development is complete change the debug setting to: `DEBUG = False` in settings.py
-4. If you use the summernote editor add this for it to work on Heroku: `X_FRAME_OPTIONS = SAMEORIGIN ` to settings.py.
-5. In Heroku settings, delete the config vars for `DISABLE_COLLECTSTATIC = 1`
-
-## Forking This Project
-
-* Fork this project by following the steps:
-
-1. Open [GitHub](https://github.com/Tekali7/Costly)
-2. Find the 'Fork' button at the top right of the page
-3. Once you click the button the fork will be in your repository
-
-## Cloning This Project
-
-* Clone this project by following the steps:
-
-1. Open [GitHub](https://github.com/Tekali7/Costly)
-2. You will be provided with three options to choose from, HTTPS, SSH or GitHub CLI, click the clipboard icon in order to copy the URL
-3. Once you click the button the fork will be in your repository
-4. Open a new terminal
-5. Change the current working directory to the location that you want the cloned directory
-6. Type 'git clone' and paste the URL copied in step 3
-7. Press 'Enter' and the project is cloned
-
-# Credits
-
-- The layout of the page was used with the help of: https://bootswatch.com/
+- Great "thank you" to David Calikes, John Rearden, Kevin, Roo - for the ideas, help with the errors fixing. 
+- "Thank you" to my colleagues from this cohort - for the help with errors fixing and ideas.
+- The layout of the page was done with the help of: https://bootswatch.com/
 - Other projects where I took the inspiration, help and ideas: 
 (<https://github.com/Stephen-Bevan/Magical-Maths-Monkey/tree/main>)  - our common Hackathon project 
 (<https://github.com/Borys-777/ukrainians_in_ireland/tree/main >) - my previous project 
@@ -464,22 +464,10 @@ I will work on fixing in the next sprints.
  - LMS for teaching content: (<https://learn.codeinstitute.net/ci_program/fsbootcamp_with_hackathons_v2_2>)
 
 - Bootstrap technologies: (<https://getbootstrap.com/docs/4.0/components/card/>)
+- ChatGPT was used to fix the errors in the code. 
 
 - Youtube resources: (<https://www.youtube.com/watch?v=pqWyUAT38e0&t=7810s>), (<https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy>), (<https://www.youtube.com/watch?v=hWhWdf2gsfQ&list=PL_SWATNcLmYmlMmEIb18iZldUEwAOONke>), (<https://www.youtube.com/watch?v=l6xIYIH87cI&list=PL0rhqMLHaq3C8qmw7LmEdinUfYXv4IxQc&index=2 >)
 
 
 - Photos were used from this website: (<https://www.vecteezy.com/photo/4361569-financial-planning-of-the-work-week>), inspiration from these as well: (<https://www.vecteezy.com/photo/4361569-financial-planning-of-the-work-week>),  (<https://www.vecteezy.com/photo/28113098-photo-realistic-of-calculator-money-and-paper-with-graphic-chart-on-table-ai-generative>) , (<https://www.vecteezy.com/photo/28114675-photo-realistic-of-calculator-money-and-paper-with-graphic-chart-on-table-ai-generative>)
-
-
-- The HTML for displaying Django messages was adapted from the walkthrough project.
-- The 10 lines in the base template's main section were adapted from the walkthrough project.
-- The header in the base template was adapted from the walkthrough project.
-
-- I found a lot of information about Django's urls, forms, models etc on the [Django Documentation](<https://docs.djangoproject.com/en/5.0/>).
-- My Mentor Brian Macharia taught me about aggregation, styling and authentication.
-
-- The remainder of the code was written by me with the help from the mentioned Documentation and also [Stackoverflow](<https://stackoverflow.com/>) to solve problems.
-
-
-
 
