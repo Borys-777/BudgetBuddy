@@ -9,8 +9,9 @@ class Expense(models.Model):
     """
     # creation_date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # name = models.CharField(max_length=100, unique=True, blank=False, default='Indicate your name here')
-    expense_type = models.CharField(max_length=100, unique=True, blank=False, default='Type your expenses here') 
+    expense_type = models.CharField(max_length=100, unique=True, blank=False, default='Type your expenses here')
+
+    # To be implemented in the next sprint (lack of time)
     # currency_select = [
     #     # ('USD', 'USD'),
     #     # ('GBP', 'GBP'),
@@ -19,8 +20,7 @@ class Expense(models.Model):
     currency = models.CharField(
         max_length=3,
         default='EUR'
-        # choices=currency_select,
-        # editable=False
+       
     )
 
     cost = models.DecimalField(
@@ -28,14 +28,12 @@ class Expense(models.Model):
         decimal_places=2
     )
 
-    # created_at = models.DateTimeField(auto_now_add=True) - not sure if this field is required. Will check later
-
     class Meta:
         ordering = ["id"]
 
 class Month(models.Model):
     """
-    Model showing the month of the expenses were made
+    Model showing the month of the expenses were made. It is shown in admin panel, but I will implement it for the next sprint. Lack of time for now.
     """
     month_select = [
         ("January", "January"),
@@ -57,8 +55,3 @@ class Month(models.Model):
         choices=month_select,  
         
     )
-    
-    # year = models.PositiveIntegerField(blank=False, default=2024)  
-
-    # def __str__(self):
-    #     return f"{self.name} {self.month_name} {self.year}"

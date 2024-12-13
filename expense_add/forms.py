@@ -10,7 +10,6 @@ from django.forms.widgets import PasswordInput, TextInput
 
 
 # Create/Register a user here 
-
 class CreateUserForm(UserCreationForm):
 
     class Meta:
@@ -18,8 +17,8 @@ class CreateUserForm(UserCreationForm):
         model = User
         fields = ['username', 'password1', 'password2']
 
-        # Class for user login 
 
+        # Class for user login 
 class LoginForm(AuthenticationForm):
 
     username = forms.CharField(widget=TextInput())
@@ -27,7 +26,6 @@ class LoginForm(AuthenticationForm):
 
 
 # Creating a record
-
 class CreateRecordForm(forms.ModelForm):
        
        class Meta:
@@ -39,7 +37,6 @@ class CreateRecordForm(forms.ModelForm):
 
 
 # Updating a record
-
 class UpdateRecordForm(forms.ModelForm):
        
        class Meta:

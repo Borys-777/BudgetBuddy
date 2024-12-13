@@ -13,6 +13,7 @@ from .models import Expense
 from django.contrib import messages
 
 # from django.http import HttpResponse
+
  
 class HomePage(TemplateView):
     """
@@ -20,16 +21,9 @@ class HomePage(TemplateView):
     """
     template_name = 'expense_add/index.html'
 
-# Create your views here.
-# def home(request):
-#     return render(request, 'templates_name = index.html')
-
 
 # Register a user 
-
 def register(request):
-
-    # form = CreateUserForm()
 
     if request.method == "POST":
         form = CreateUserForm(request.POST)
@@ -41,13 +35,13 @@ def register(request):
             messages.error(request, "Error creating your account")
 
     else:
-        form = CreateUserForm()  # Initialize the form for GET request
+        form = CreateUserForm()  
 
     context = {'form':form}
     return render(request, 'expense_add/register.html', context=context)
 
-    # User login 
 
+    # User login 
 def my_login(request):
         
     form = LoginForm()
@@ -76,37 +70,35 @@ def my_login(request):
     return render(request, 'expense_add/my-login.html', context=context)
 
 
-
+#Dashboard
 @login_required(login_url='my-login')
 def dashboard(request):
-    # Get all expenses for the logged-in user
+    
     my_expenses = Expense.objects.filter(user=request.user)
 
-    # Assuming all expenses have the same currency (for simplicity)
     if my_expenses.exists():
-        currency = my_expenses[0].currency  # Get the currency from the first expense
+        currency = my_expenses[0].currency  
     else:
-        currency = 'EUR'  # Default to EUR if no expenses
+        currency = 'EUR'  # Default to EUR
 
     context = {
         'expenses': my_expenses,
-        'currency': currency,  # Pass the currency to the template
+        'currency': currency,  
     }
-    
+
     return render(request, 'expense_add/dashboard.html', context=context)
 
 
 # Create a record 
-
 @login_required(login_url='my-login')
 def create_record(request):
     form = CreateRecordForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
-            expense = form.save(commit=False)  # Don't save immediately
-            expense.user = request.user  # Assign the logged-in user
-            expense.currency = 'EUR'  # Ensure the currency is always 'EUR'
-            expense.save()  # Now save the record with the user
+            expense = form.save(commit=False) 
+            expense.user = request.user  
+            expense.currency = 'EUR' 
+            expense.save() 
 
             messages.success(request, "Your record was created")
             return redirect("dashboard")
@@ -120,7 +112,6 @@ def create_record(request):
 def update_record(request, pk):
     record = Expense.objects.get(id=pk)
 
-    # Ensure that the logged-in user is the owner of the record
     if record.user != request.user:
         messages.error(request, "You are not authorized to edit this record.")
         return redirect('dashboard')
@@ -130,7 +121,7 @@ def update_record(request, pk):
     if request.method == 'POST':
         form = UpdateRecordForm(request.POST, instance=record)
         if form.is_valid():
-            record.currency = 'EUR'  # Ensure the currency is always 'EUR'
+            record.currency = 'EUR'  
             form.save()
             messages.success(request, "Your record was updated")
             return redirect('dashboard')
@@ -140,12 +131,10 @@ def update_record(request, pk):
 
 
 # View a singular comment 
-
 @login_required(login_url='my-login')
 def singular_record(request, pk):
     record = Expense.objects.get(id=pk)
 
-    # Ensure that the logged-in user is the owner of the record
     if record.user != request.user:
         messages.error(request, "You are not authorized to view this record.")
         return redirect('dashboard')
@@ -154,14 +143,11 @@ def singular_record(request, pk):
     return render(request, 'expense_add/read-record.html', context=context)
 
 
-
     # Delete record 
-
 @login_required(login_url='my-login')
 def delete_record(request, pk):
     record = Expense.objects.get(id=pk)
 
-    # Ensure that the logged-in user is the owner of the record
     if record.user != request.user:
         messages.error(request, "You are not authorized to delete this record.")
         return redirect('dashboard')
@@ -171,9 +157,7 @@ def delete_record(request, pk):
     return redirect('dashboard')
 
 
-
 # User logout 
-
 def user_logout(request):
 
     auth.logout(request)
@@ -181,6 +165,4 @@ def user_logout(request):
     messages.success(request, "You are logged out")
 
     return redirect('my-login')
-
-
 
